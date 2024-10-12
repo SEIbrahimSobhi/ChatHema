@@ -1,52 +1,51 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Inter:wght@400;500&display=swap");
- 
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins", sans-serif;;
+    font-family: "Poppins", sans-serif;
 }
 
-body{
+body {
     background: #242424;
 }
 
-section{
+section {
     height: 100vh;
 }
 
-section .container{
+section .container {
     width: 80%;
     margin: 0 auto;
     max-width: 1000px;
 }
 
-section .header{
+section .header {
     padding-top: 50px;
 }
 
-section .header h1{
+section .header h1 {
     width: fit-content;
-    font-size: 65px;
+    font-size: 3.5rem; /* استخدام وحدات نسبية لتناسب الشاشات المختلفة */
     background-clip: text;
-    background: linear-gradient(to right , #4285f4 , #d96570);
+    background: linear-gradient(to right, #4285f4, #d96570);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin: 0 auto 100px;
 }
 
-section .header h2{
-    font-size: 50px;
+section .header h2 {
+    font-size: 2.5rem; /* تحسين حجم الخط */
     color: #e3e3e3;
 }
 
-section .header p{
+section .header p {
     color: #a6a6a6;
-    font-size: 35px;
+    font-size: 1.5rem; /* تحسين حجم الخط */
 }
 
-.typing_form{
+.typing_form {
     position: fixed;
     bottom: 0;
     left: 0;
@@ -58,26 +57,26 @@ section .header p{
     align-items: center;
 }
 
-.typing_form .input_wrapper{
+.typing_form .input_wrapper {
     width: 80%;
     max-width: 1000px;
     position: relative;
 }
 
-.typing_form .input_wrapper input{
+.typing_form .input_wrapper input {
     width: 100%;
     height: 100%;
     padding: 17px 50px 17px 25px;
     outline: none;
     border: none;
-    font-size: 15px;
+    font-size: 1rem; /* تحسين حجم الخط */
     color: #e3e3e3;
     border-radius: 30px;
     background: #383838;
     transition: 0.3s ease;
 }
 
-.typing_form .input_wrapper button{
+.typing_form .input_wrapper button {
     position: absolute;
     right: 10px;
     top: 50%;
@@ -86,90 +85,143 @@ section .header p{
     outline: none;
     border: none;
     cursor: pointer;
-    font-size: 25px;
+    font-size: 1.5rem; /* تحسين حجم الخط */
     color: #e3e3e3;
     opacity: 0;
     transition: 0.3s;
 }
 
-.typing_form .input_wrapper input:focus{
+.typing_form .input_wrapper input:focus {
     background: #444;
 }
 
-.typing_form .input_wrapper input:valid ~ button{
+.typing_form .input_wrapper input:valid ~ button {
     opacity: 1;
 }
 
-.chat_list{
+.chat_list {
     margin-top: 80px;
     height: auto;
     padding-bottom: 120px;
 }
 
-.chat_list .message{
+.chat_list .message {
     margin-bottom: 30px;
 }
 
-.chat_list .message_content{
+.chat_list .message_content {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.chat_list .message_content img{
-    width: 40px;
-    height: 40px;
+.chat_list .message_content img {
+    width: 50px; /* تحسين حجم الصورة */
+    height: 50px; /* تحسين حجم الصورة */
     border-radius: 50%;
     align-self: flex-start;
+    object-fit: cover; /* لتحسين عرض الصورة */
 }
 
-.chat_list .message_content .text{
+.chat_list .message_content .text {
     color: #e3e3e3;
     white-space: pre-wrap;
+    max-width: 70%; /* تحسين عرض النص */
+    overflow-wrap: break-word; /* لف النص */
 }
 
-.chat_list .message span{
+.chat_list .message span {
     color: #444;
     cursor: pointer;
     margin-left: 50px;
-    font-size: 20px;
-    margin-top: 5px;
-    cursor: pointer;
+    font-size: 1.2rem; /* تحسين حجم الخط */
     transition: 0.3s;
 }
 
-.chat_list .message:hover span{
+.chat_list .message:hover span {
     color: #e3e3e3;
 }
 
-.chat_list .message .loading_indicoator{
+.chat_list .message .loading_indicoator {
     width: 100%;
     display: none;
     flex-direction: column;
     gap: 10px;
 }
 
-.chat_list .message.loading .loading_indicoator{
+.chat_list .message.loading .loading_indicoator {
     display: flex;
 }
 
-.chat_list .message .loading_indicoator .loading_Bar{
-    height: 11px;
+.chat_list .message .loading_indicoator .loading_Bar {
+    height: 15px;
     width: 100%;
-    background: linear-gradient(to right , #4285f4 , #242424 , #4285f4);
-    background-position: -800px 0;
-    animation: loading 3s linear infinite;
+    background: linear-gradient(135deg, #5d33f4, #e33939, #5d33f4);
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    animation: loading 2s linear infinite; /* تحسين مدة الأنميشن */
 }
 
-.chat_list .message .loading_indicoator .loading_Bar:last{
-    width: 70%;
-}
-
-@keyframes loading{
-    0%{
-        background-position: -800px 0;
+@keyframes loading {
+    0% {
+        background-position: 0% 0;
     }
-    100%{
-        background-position: 800px 0;
+    50% {
+        background-position: 100% 0; /* إضافة نقطة منتصف لتحسين الأنميشن */
+    }
+    100% {
+        background-position: 0% 0;
+    }
+}
+
+.chat_list .message .loading_indicoator .loading_Bar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    height: 100%;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    animation: glow 2s infinite alternate;
+    border-radius: 10px;
+}
+
+@keyframes glow {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateX(100%);
+        opacity: 1;
+    }
+}
+
+/* تحسين تصميم الشاشات الصغيرة */
+@media (max-width: 768px) {
+    section .header h1 {
+        font-size: 2.5rem; /* حجم الخط للشاشات الصغيرة */
+    }
+
+    section .header h2 {
+        font-size: 1.8rem; /* حجم الخط للشاشات الصغيرة */
+    }
+
+    section .header p {
+        font-size: 1rem; /* حجم الخط للشاشات الصغيرة */
+    }
+
+    .typing_form .input_wrapper button {
+        font-size: 1.2rem; /* حجم الخط للشاشات الصغيرة */
+    }
+
+    .chat_list .message span {
+        font-size: 1rem; /* حجم الخط للشاشات الصغيرة */
+    }
+
+    .chat_list .message_content img {
+        width: 40px; /* تصغير الصورة في الشاشات الصغيرة */
+        height: 40px; /* تصغير الصورة في الشاشات الصغيرة */
     }
 }
