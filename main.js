@@ -18,7 +18,7 @@ const showTypingEffect = (text, textElement) => {
             clearInterval(typingInterval); // إيقاف الكتابة عند اكتمال النص
         }
         window.scrollTo(0, chat_list.scrollHeight); // تمرير تلقائي للأسفل
-    }, 75);
+    }, 50); // تسريع الكتابة بتقليل الزمن إلى 50 مللي ثانية
 }
 
 // دالة نسخ الرسالة إلى الحافظة
@@ -32,12 +32,12 @@ const copyMessage = (copy_Btn) => {
 }
 
 // دالة إظهار الرسالة أثناء التحميل
-const showLoading = (customResponse = null) => {
+const showLoading = () => {
     const html = `
     <div class="message">
         <div class="message_content">
             <img src="Hema2.png" alt="">
-            <p class="text">${customResponse || ''}</p>
+            <p class="text"></p>
             <div class="loading_indicoator">
                 <div class="loading_Bar"></div>
                 <div class="loading_Bar"></div>
@@ -54,11 +54,11 @@ const showLoading = (customResponse = null) => {
     div.innerHTML = html;
     chat_list.appendChild(div);
 
-    return div; // إرجاع العنصر الذي تم إنشاؤه
+    return div; // إرجاع العنصر لتحريره لاحقًا
 }
 
 // دالة توليد الرد عبر API
-const genrateAPIResponse = async (div, userMessage) => {
+const genrateAPIResponse = async (div) => {
     const textElement = div.querySelector(".text");
 
     try {
@@ -79,8 +79,15 @@ const genrateAPIResponse = async (div, userMessage) => {
         const apiResponse = data?.candidates[0].content.parts[0].text.replace(/\*\*(.*?)\*\*/g, '$1');
         console.log(apiResponse);
 
-        // إظهار تأثير الكتابة للرد
-        showTypingEffect(apiResponse, textElement);
+        // إذا كان الرد هو "أنا نموذج لغوي كبير، تم تدريبي بواسطة جوجل."
+        if (apiResponse === "أنا نموذج لغوي كبير، تم تدريبي بواسطة جوجل.") {
+            const customResponse = "أنا مساعد الشخصي وتم تصميمي بواسطة إبراهيم صبحي";
+            // إظهار تأثير الكتابة للرد المخصص
+            showTypingEffect(customResponse, textElement);
+        } else {
+            // إظهار تأثير الكتابة للرد من API
+            showTypingEffect(apiResponse, textElement);
+        }
 
     } catch (error) {
         console.error("Error fetching API response:", error);
@@ -112,21 +119,11 @@ const handleOutGoingChat = () => {
     typing_form.reset(); // إعادة تعيين النموذج بعد الإرسال
     window.scrollTo(0, chat_list.scrollHeight); // تمرير الصفحة للأسفل
 
-    // التحقق من محتوى الرسالة المدخلة
-    if (userMessage === "من انت" || userMessage === "من الذي صممك") {
-        const loadingDiv = showLoading(); // إظهار شريط التحميل
+    // عرض شريط التحميل
+    const loadingDiv = showLoading();
 
-        // إظهار الرد المخصص بعد فترة قصيرة
-        setTimeout(() => {
-            const customResponse = "أنا مساعد الشخصي وتم تصميمي بواسطة إبراهيم صبحي";
-            loadingDiv.querySelector(".text").innerHTML = customResponse; // تحديث النص
-            loadingDiv.classList.remove("loading"); // إزالة حالة التحميل
-        }, 1000); // الانتظار لمدة 1 ثانية قبل عرض الرد
-        return; // إنهاء الدالة بعد إظهار الرد المخصص
-    }
-
-    // استدعاء دالة إظهار التحميل بعد نصف ثانية
-    setTimeout(() => showLoading(), 500);
+    // استدعاء دالة إظهار الرد من API بعد نصف ثانية
+    setTimeout(() => genrateAPIResponse(loadingDiv), 500);
 }
 
 // إضافة مستمع للحدث عند إرسال النموذج
