@@ -18,7 +18,7 @@ const showTypingEffect = (text, textElement) => {
             clearInterval(typingInterval); // إيقاف الكتابة عند اكتمال النص
         }
         window.scrollTo(0, chat_list.scrollHeight); // تمرير تلقائي للأسفل
-    }, 50); // تسريع الكتابة بتقليل الزمن إلى 50 مللي ثانية
+    }, 75); // تسريع الكتابة بتقليل الزمن إلى 50 مللي ثانية
 }
 
 // دالة نسخ الرسالة إلى الحافظة
