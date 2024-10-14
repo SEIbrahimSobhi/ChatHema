@@ -36,7 +36,7 @@ const showLoading = () => {
     const html = `
     <div class="message">
         <div class="message_content">
-            <img src="ChatHema1.png" alt="">
+            <img src="Hema2.png" alt="">
             <p class="text"></p>
             <div class="loading_indicoator">
                 <div class="loading_Bar"></div>
@@ -116,7 +116,7 @@ const handleOutGoingChat = () => {
 
     const html = `
     <div class="message_content">
-        <img src="Hema2.png" alt="">
+        <img src="ChatHema1.png" alt="">
         <p class="text"></p>
     </div>
     `;
@@ -220,8 +220,8 @@ const handleOutGoingChat = () => {
     }
 }
 
-// إضافة حدث الإرسال للنموذج
-typing_form.onsubmit = (e) => {
-    e.preventDefault(); // منع إرسال النموذج
-    handleOutGoingChat(); // معالجة الرسالة الصادرة
-}
+// إضافة مستمع للحدث عند إرسال النموذج
+typing_form.addEventListener("submit", (event) => {
+    event.preventDefault(); // منع السلوك الافتراضي
+    handleOutGoingChat(); // التعامل مع الرسالة
+});
