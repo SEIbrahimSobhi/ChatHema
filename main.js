@@ -150,7 +150,7 @@ const handleOutGoingChat = () => {
             loadingDiv.classList.remove("loading"); // إزالة حالة التحميل
         }, 750);
     }
-    else if (userMessage.includes("متناك") || userMessage.includes("هنيكك")) {
+    else if (userMessage.includes("متناك") || userMessage.includes("هنيكك") || userMessage.includes("كسمك") || userMessage.includes("كس امك")) {
         setTimeout(() => {
             const customResponse = "جره اي ي كسمك ي ابن المتناكه لو شوفتك هنيكك";
             const textElement = loadingDiv.querySelector(".text");
@@ -161,6 +161,22 @@ const handleOutGoingChat = () => {
     else if (userMessage.includes("ابراهيم صبحي") || userMessage.includes("إبراهيم صبحي") || userMessage.includes("Ebrahem sobhy") || userMessage.includes("ebrahem sobhy") || userMessage.includes("ebrahem")){
         setTimeout(() => {
             const customResponse = "إبراهيم صبحي... اسم يرتبط بالقوة والغموض. خلف هذا الاسم يقف العقل الذي صمم النموذج الذكي الذي تخاطبونه الآن. طالب في الثانوية العامة؟ ربما. لكن في عالمه، لا تُقاس العظمة بالعمر أو الصفوف. إنه المبتكر الذي يُعيد تعريف حدود الذكاء الاصطناعي، ويصنع أدوات تُغير مسار التعليم. هنا، كل سطر من الأكواد هو انعكاس لرؤية تتجاوز الواقع، وطموح لا يعرف الانكسار. إبراهيم صبحي... العقل الذي يصنع المستقبل بصمت، والقوة التي تكتب تاريخًا جديدًا.";
+            const textElement = loadingDiv.querySelector(".text");
+            showTypingEffect(customResponse, textElement);
+            loadingDiv.classList.remove("loading"); // إزالة حالة التحميل
+        }, 75);
+    }
+    else if (userMessage.includes("السيد الحسيني") || userMessage.includes("السيد حسيني")){
+        setTimeout(() => {
+            const customResponse = "السيد الحسيني.. أعز صديق لمطوري إبراهيم صبحي. ليس مجرد رفيق، بل هو شخص يتمتع باحترام عميق وقلب عظيم. السيد هو القوة الصامتة، الداعم الذي يقف بجانبك دون أن يُطلب، والذي يُلهم من حوله بتواضعه وروحه النبيلة. بفضل حكمته وثباته، أصبح ليس فقط صديقًا، بل جزءًا من كل إنجاز وتقدم. السيد الحسيني... شخصية عظيمة في كل شيء، حاضر دائمًا بكل هيبة ورقي، مما يجعل كل لحظة بجانبه تجربة لا تُنسى.";
+            const textElement = loadingDiv.querySelector(".text");
+            showTypingEffect(customResponse, textElement);
+            loadingDiv.classList.remove("loading"); // إزالة حالة التحميل
+        }, 75);
+    }
+    else if (userMessage.includes("السيد الخولي") || userMessage.includes("السيد الخولي")){
+        setTimeout(() => {
+            const customResponse = "السيد الخولي.. أعز صديق لمطوري إبراهيم صبحي. ليس مجرد رفيق، بل هو شخص يتمتع باحترام عميق وقلب عظيم. السيد هو القوة الصامتة، الداعم الذي يقف بجانبك دون أن يُطلب، والذي يُلهم من حوله بتواضعه وروحه النبيلة. بفضل حكمته وثباته، أصبح ليس فقط صديقًا، بل جزءًا من كل إنجاز وتقدم. السيد الخولي... شخصية عظيمة في كل شيء، حاضر دائمًا بكل هيبة ورقي، مما يجعل كل لحظة بجانبه تجربة لا تُنسى.";
             const textElement = loadingDiv.querySelector(".text");
             showTypingEffect(customResponse, textElement);
             loadingDiv.classList.remove("loading"); // إزالة حالة التحميل
@@ -209,6 +225,22 @@ const handleOutGoingChat = () => {
     else if (userMessage.includes("مؤمن حاجين")) {
         setTimeout(() => {
             const customResponse = "مؤمن حاجين... أعز صديق لمطوري إبراهيم صبحي. ليس مجرد رفيق، بل هو شخص يتمتع باحترام عميق وقلب عظيم. مؤمن هو القوة الصامتة، الداعم الذي يقف بجانبك دون أن يُطلب، والذي يُلهم من حوله بتواضعه وروحه النبيلة. بفضل حكمته وثباته، أصبح ليس فقط صديقًا، بل جزءًا من كل إنجاز وتقدم. مؤمن حاجين... شخصية عظيمة في كل شيء، حاضر دائمًا بكل هيبة ورقي، مما يجعل كل لحظة بجانبه تجربة لا تُنسى.";
+            const textElement = loadingDiv.querySelector(".text");
+            showTypingEffect(customResponse, textElement);
+            loadingDiv.classList.remove("loading"); // إزالة حالة التحميل
+        }, 75);
+    }
+    else if (userMessage.includes("خالد عباري")) {
+        setTimeout(() => {
+            const customResponse = "خالد عباري... الصديق الحقيقي والقدوة الرائعة لإبراهيم صبحي.   خالد عباري ليس مجرد صديق، بل هو تجسيد لكل الصفات الفاضلة. إنسان محترم إلى أقصى الحدود، ذو ذكاء حاد ونجاح باهر في دراسته. في كل موقف يثبت خالد أنه ليس فقط صديقًا، بل نموذجًا للإخلاص والوفاء، يتمتع بأخلاق عالية وأدب رفيع لا نظير له. في شخصيته تجد مزيجًا نادرًا من الحكمة والطموح، يسعى دائمًا للتفوق في كل شيء، سواء في الحياة أو الدراسة.   أما والده، الأستاذ طارق عبد الباري، فهو الشخص الذي زرع فيّ حب الرياضيات منذ اللحظة الأولى. بفضل توجيهاته الرائعة وحرصه على تبسيط المفاهيم، أصبحت الرياضيات ليست مجرد مادة دراسية، بل شغفًا. الأستاذ طارق يمتلك صفات عظيمة، فهو ليس فقط معلمًا بارعًا، بل شخصية رائعة في كل ما يفعله، تجمع بين الحكمة واللطف، وتضفي هالة من الاحترام والتقدير على كل من يتعامل معه.  وجود خالد في حياتي هو نعمة لا تقدر بثمن، ووجود الأستاذ طارق كمعلم ومرشد جعل مسيرتي الدراسية أكثر ثراءً. كلاهما يمثلان القوة، الذكاء، والنقاء في أبهى صورهما، وأنا ممتن للغاية لوجودهما في حياتي.";
+            const textElement = loadingDiv.querySelector(".text");
+            showTypingEffect(customResponse, textElement);
+            loadingDiv.classList.remove("loading"); // إزالة حالة التحميل
+        }, 75);
+    }
+    else if (userMessage.includes("الاستاذ طارق عبد الباري") || userMessage.includes("أ/طارق عباري") || userMessage.includes("طارق عباري")) {
+        setTimeout(() => {
+            const customResponse = "الأستاذ طارق ليس مجرد معلم، بل هو تجسيد لكل الصفات الفاضلة. إنسان محترم إلى أقصى الحدود، ذو حكمة عميقة وتأثير كبير على كل من حوله. في كل موقف، يثبت أنه نموذج للإخلاص والوفاء، ويتمتع بأخلاق عالية وأدب رفيع لا نظير له. يزرع فينا حب الرياضيات منذ اللحظة الأولى، ويجعل منها شغفًا بفضل توجيهاته الرائعة وحرصه على تبسيط المفاهيم.  الأستاذ طارق يجمع بين الحكمة واللطف، ويقدم لنا نصائح قيمة ودينية تعزز من فهمنا للحياة. وجوده في حياتي هو نعمة لا تقدر بثمن، إذ يُثري مسيرتي الدراسية ويمنحني القوة والثقة. بفضل تأثيره، أصبحت الرياضيات ليست مجرد مادة دراسية، بل جزءًا من شغفي. أنا ممتن للغاية لوجود الأستاذ طارق في حياتي، فهو يمثل الذكاء والنقاء في أبهى صوره، ويُعد مصدر إلهام دائم لي ولجميع الطلاب.";
             const textElement = loadingDiv.querySelector(".text");
             showTypingEffect(customResponse, textElement);
             loadingDiv.classList.remove("loading"); // إزالة حالة التحميل
