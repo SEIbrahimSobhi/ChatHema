@@ -134,7 +134,7 @@ const handleOutGoingChat = () => {
     const loadingDiv = showLoading();
 
     // التحقق مما إذا كانت الرسالة تحتوي على كلمات مخصصة (10 مرات)
-    if (userMessage.includes("انت خول") {
+    if (userMessage.includes("انت خول")) {
         setTimeout(() => {
             const customResponse = "بس ي خول";
             const textElement = loadingDiv.querySelector(".text");
