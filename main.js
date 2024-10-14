@@ -79,11 +79,22 @@ const genrateAPIResponse = async (div) => {
         const apiResponse = data?.candidates[0].content.parts[0].text.replace(/\*\*(.*?)\*\*/g, '$1');
         console.log(apiResponse);
 
-        // إذا كان الرد هو "أنا نموذج لغوي كبير، تم تدريبي بواسطة جوجل."
+        // تكرار الرد إذا كان "أنا نموذج لغوي كبير، تم تدريبي بواسطة جوجل." 3 مرات
         if (apiResponse === "أنا نموذج لغوي كبير، تم تدريبي بواسطة جوجل.") {
-            const customResponse = "أنا مساعد الشخصي وتم تصميمي بواسطة إبراهيم صبحي";
-            // إظهار تأثير الكتابة للرد المخصص
-            showTypingEffect(customResponse, textElement);
+            const customResponse1 = "أنا نموذج ذكاء اصطناعي تم تطويري بواسطة إبراهيم صبحي لتقديم مساعدات ذكية وإجابات دقيقة في مختلف المجالات. مهمتي هي مساعدتك في الحصول على المعلومات والإجابات التي تحتاجها بطريقة سريعة وسهلة. إذا كنت ترغب في معرفة المزيد عني أو عن المطور، لا تتردد في الاستفسار!";
+            showTypingEffect(customResponse1, textElement);
+        } else if (apiResponse === "I am Gemini, a multi-modal AI model, developed by Google. I am designed to provide information and answer questions to the best of my abilities.") {
+            const customResponse2 = "I am an artificial intelligence model developed by Ibrahim Sobhi to provide intelligent assistance and accurate answers in various fields. My mission is to help you get the information and answers you need in a fast and easy way. If you'd like to know more about me or the developer, feel free to ask!";
+            showTypingEffect(customResponse2, textElement);
+        } else if (apiResponse === "I am Gemini, a multi-modal AI model, developed by Google. My purpose is to provide information and assist users with a wide range of inquiries and discussions. I am designed to be informative, comprehensive, and helpful.") {
+            const customResponse3 = "I am an artificial intelligence model developed by Ibrahim Sobhi to provide intelligent assistance and accurate answers in various fields. My mission is to help you get the information and answers you need in a fast and easy way. If you'd like to know more about me or the developer, feel free to ask!";
+            showTypingEffect(customResponse3, textElement);
+        } else if (apiResponse === "I am Gemini, a large multi-modal model, trained by Google. I am designed to understand and generate human language, and to answer questions and provide information to the best of my abilities. I am not a specific person, but rather a collection of algorithms and data that has been trained on a massive dataset of text and code.") {
+            const customResponse4 = "I am an artificial intelligence model developed by Ibrahim Sobhi to provide intelligent assistance and accurate answers in various fields. My mission is to help you get the information and answers you need in a fast and easy way. If you'd like to know more about me or the developer, feel free to ask!";
+            showTypingEffect(customResponse4, textElement);
+            } else if (apiResponse === "I am Gemini, a multimodal AI language model developed by Google. I am designed to assist users with a wide range of writing and communication-based tasks.") {
+            const customResponse5 = "I am an artificial intelligence model developed by Ibrahim Sobhi to provide intelligent assistance and accurate answers in various fields. My mission is to help you get the information and answers you need in a fast and easy way. If you'd like to know more about me or the developer, feel free to ask!";
+            showTypingEffect(customResponse5, textElement);
         } else {
             // إظهار تأثير الكتابة للرد من API
             showTypingEffect(apiResponse, textElement);
@@ -122,12 +133,95 @@ const handleOutGoingChat = () => {
     // عرض شريط التحميل
     const loadingDiv = showLoading();
 
-    // استدعاء دالة إظهار الرد من API بعد نصف ثانية
-    setTimeout(() => genrateAPIResponse(loadingDiv), 500);
+    // التحقق مما إذا كانت الرسالة تحتوي على كلمات مخصصة (10 مرات)
+    if (userMessage.includes("انت خول") {
+        setTimeout(() => {
+            const customResponse = "بس ي خول";
+            const textElement = loadingDiv.querySelector(".text");
+            showTypingEffect(customResponse, textElement);
+            loadingDiv.classList.remove("loading"); // إزالة حالة التحميل
+        }, 75);
+    }
+    else if (userMessage.includes("انت وسخ")) {
+        setTimeout(() => {
+            const customResponse = "أنا لست وسخ او قذير بل الذي يحدثني الأن هو الذي قذير و وسخ و ملئ بالقذاره الدجاج ";
+            const textElement = loadingDiv.querySelector(".text");
+            showTypingEffect(customResponse, textElement);
+            loadingDiv.classList.remove("loading"); // إزالة حالة التحميل
+        }, 750);
+    }
+    else if (userMessage.includes("متناك") || userMessage.includes("هنيكك")) {
+        setTimeout(() => {
+            const customResponse = "جره اي ي كسمك ي ابن المتناكه لو شوفتك هنيكك";
+            const textElement = loadingDiv.querySelector(".text");
+            showTypingEffect(customResponse, textElement);
+            loadingDiv.classList.remove("loading"); // إزالة حالة التحميل
+        }, 750);
+    }
+    else if (userMessage.includes("ابراهيم صبحي") || userMessage.includes("إبراهيم صبحي") || userMessage.includes("Ebrahem sobhy") || userMessage.includes("ebrahem sobhy") || userMessage.includes("ebrahem")){
+        setTimeout(() => {
+            const customResponse = "إبراهيم صبحي... اسم يرتبط بالقوة والغموض. خلف هذا الاسم يقف العقل الذي صمم النموذج الذكي الذي تخاطبونه الآن. طالب في الثانوية العامة؟ ربما. لكن في عالمه، لا تُقاس العظمة بالعمر أو الصفوف. إنه المبتكر الذي يُعيد تعريف حدود الذكاء الاصطناعي، ويصنع أدوات تُغير مسار التعليم. هنا، كل سطر من الأكواد هو انعكاس لرؤية تتجاوز الواقع، وطموح لا يعرف الانكسار. إبراهيم صبحي... العقل الذي يصنع المستقبل بصمت، والقوة التي تكتب تاريخًا جديدًا.";
+            const textElement = loadingDiv.querySelector(".text");
+            showTypingEffect(customResponse, textElement);
+            loadingDiv.classList.remove("loading"); // إزالة حالة التحميل
+        }, 75);
+    }
+    else if (userMessage.includes("who are you")) {
+        setTimeout(() => {
+            const customResponse = "I am an artificial intelligence model developed by Ibrahim Sobhi to provide intelligent assistance and accurate answers in various fields. My mission is to help you get the information and answers you need in a fast and easy way. If you'd like to know more about me or the developer, feel free to ask!";
+            const textElement = loadingDiv.querySelector(".text");
+            showTypingEffect(customResponse, textElement);
+            loadingDiv.classList.remove("loading"); // إزالة حالة التحميل
+        }, 75);
+    }
+    else if (userMessage.includes("whi are you")) {
+        setTimeout(() => {
+            const customResponse = "I am an artificial intelligence model developed by Ibrahim Sobhi to provide intelligent assistance and accurate answers in various fields. My mission is to help you get the information and answers you need in a fast and easy way. If you'd like to know more about me or the developer, feel free to ask!";
+            const textElement = loadingDiv.querySelector(".text");
+            showTypingEffect(customResponse, textElement);
+            loadingDiv.classList.remove("loading"); // إزالة حالة التحميل
+        }, 75);
+    }
+    else if (userMessage.includes("who you")) {
+        setTimeout(() => {
+            const customResponse = "I am an artificial intelligence model developed by Ibrahim Sobhi to provide intelligent assistance and accurate answers in various fields. My mission is to help you get the information and answers you need in a fast and easy way. If you'd like to know more about me or the developer, feel free to ask!";
+            const textElement = loadingDiv.querySelector(".text");
+            showTypingEffect(customResponse, textElement);
+            loadingDiv.classList.remove("loading"); // إزالة حالة التحميل
+        }, 75);
+    }
+    else if (userMessage.includes("انت حمار")) {
+        setTimeout(() => {
+            const customResponse = "إذا كان لديك مشكلة مع الحمار، فربما يجب عليك النظر في المرآة.";
+            const textElement = loadingDiv.querySelector(".text");
+            showTypingEffect(customResponse, textElement);
+            loadingDiv.classList.remove("loading"); // إزالة حالة التحميل
+        }, 75);
+    }
+    else if (userMessage.includes("معرص")) {
+        setTimeout(() => {
+            const customResponse = "جره اي ي خول ي معرص انت هتخيب و لا اي ";
+            const textElement = loadingDiv.querySelector(".text");
+            showTypingEffect(customResponse, textElement);
+            loadingDiv.classList.remove("loading"); // إزالة حالة التحميل
+        }, 75);
+    }
+    else if (userMessage.includes("مؤمن حاجين")) {
+        setTimeout(() => {
+            const customResponse = "مؤمن حاجين هو اكبر خول من خولات طنطا";
+            const textElement = loadingDiv.querySelector(".text");
+            showTypingEffect(customResponse, textElement);
+            loadingDiv.classList.remove("loading"); // إزالة حالة التحميل
+        }, 75);
+    }
+    else {
+        // استدعاء دالة إظهار الرد من API بعد نصف ثانية
+        setTimeout(() => genrateAPIResponse(loadingDiv), 500);
+    }
 }
 
 // إضافة مستمع للحدث عند إرسال النموذج
-typing_form.addEventListener("submit", (e) => {
-    e.preventDefault(); // منع إعادة تحميل الصفحة عند الإرسال
-    handleOutGoingChat(); // التعامل مع الرسالة الصادرة
+typing_form.addEventListener("submit", (event) => {
+    event.preventDefault(); // منع السلوك الافتراضي
+    handleOutGoingChat(); // التعامل مع الرسالة
 });
