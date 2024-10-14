@@ -36,7 +36,7 @@ const showLoading = () => {
     const html = `
     <div class="message">
         <div class="message_content">
-            <img src="ChatHema1.png" alt="">
+            <img src="Hema2.png" alt="">
             <p class="text"></p>
             <div class="loading_indicoator">
                 <div class="loading_Bar"></div>
@@ -200,7 +200,7 @@ const handleOutGoingChat = () => {
     }
     else if (userMessage.includes("معرص")) {
         setTimeout(() => {
-            const customResponse = "جره اي ي خول ي معرص انت هتخيب و لا اي ";
+            const customResponse = "جره اي ي خول ي معرص انت هتخيب و لا اي";
             const textElement = loadingDiv.querySelector(".text");
             showTypingEffect(customResponse, textElement);
             loadingDiv.classList.remove("loading"); // إزالة حالة التحميل
