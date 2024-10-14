@@ -220,8 +220,8 @@ const handleOutGoingChat = () => {
     }
 }
 
-// إضافة مستمع للحدث عند إرسال النموذج
-typing_form.addEventListener("submit", (event) => {
-    event.preventDefault(); // منع السلوك الافتراضي
-    handleOutGoingChat(); // التعامل مع الرسالة
-});
+// إضافة حدث الإرسال للنموذج
+typing_form.onsubmit = (e) => {
+    e.preventDefault(); // منع إرسال النموذج
+    handleOutGoingChat(); // معالجة الرسالة الصادرة
+}
