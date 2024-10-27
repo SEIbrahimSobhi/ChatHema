@@ -455,6 +455,9 @@ const genrateAPIResponse = async (div) => {
             } else if (apiResponse === "I am Gemini, a multimodal AI language model developed by Google. I am designed to assist users with a wide range of writing and communication-based tasks.") {
             const customResponse5 = "I am an artificial intelligence model developed by Ibrahim Sobhi to provide intelligent assistance and accurate answers in various fields. My mission is to help you get the information and answers you need in a fast and easy way. If you'd like to know more about me or the developer, feel free to ask!";
             showTypingEffect(customResponse5, textElement);
+            } else if (apiResponse === "مرحبا بك! أنا نموذج لغوي كبير، تم تدريبي بواسطة جوجل.") {
+            const customResponse6 = "مرحبا بك! أنا نموذج ذكاء اصطناعي تم تطويري بواسطة إبراهيم صبحي لتقديم مساعدات ذكية وإجابات دقيقة في مختلف المجالات. مهمتي هي مساعدتك في الحصول على المعلومات والإجابات التي تحتاجها بطريقة سريعة وسهلة. إذا كنت ترغب في معرفة المزيد عني أو عن المطور، لا تتردد في الاستفسار!";
+            showTypingEffect(customResponse6, textElement);
         } else {
             // إظهار تأثير الكتابة للرد من API
             showTypingEffect(apiResponse, textElement);
