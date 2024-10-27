@@ -324,30 +324,6 @@ section .header p {
 </section>
 
 <script>
-
-    // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyDSKD85CvBegxmTB85U53cfMzARY4bT15Q",
-  authDomain: "chathema-731a9.firebaseapp.com",
-  projectId: "chathema-731a9",
-  storageBucket: "chathema-731a9.appspot.com",
-  messagingSenderId: "342396420343",
-  appId: "1:342396420343:web:345d1de98cfd4ea78ad3f2",
-  measurementId: "G-DZ2WKLJK5L"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-
-    
         // دالة بسيطة لعرض رسالة ترحيبية// الحصول على العناصر المطلوبة من الـ DOM
 const typing_form = document.querySelector(".typing_form");
 const chat_list = document.querySelector(".chat_list");
@@ -647,6 +623,33 @@ typing_form.addEventListener("submit", (event) => {
     event.preventDefault(); // منع السلوك الافتراضي
     handleOutGoingChat(); // التعامل مع الرسالة
 });
+
+
+    
+
+    // Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyDSKD85CvBegxmTB85U53cfMzARY4bT15Q",
+  authDomain: "chathema-731a9.firebaseapp.com",
+  projectId: "chathema-731a9",
+  storageBucket: "chathema-731a9.appspot.com",
+  messagingSenderId: "342396420343",
+  appId: "1:342396420343:web:345d1de98cfd4ea78ad3f2",
+  measurementId: "G-DZ2WKLJK5L"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+
+    
 
     </script>
 
